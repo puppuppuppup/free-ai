@@ -1,0 +1,30 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+.btn {
+  cursor: pointer;
+  padding: 0.7rem 1.2rem;
+  background-color: #fff;
+  border: 1px solid rgb(136, 136, 136);
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: background-color .2s ease-in-out;
+}
+
+.btn:hover {
+  background-color: #f1f1f1;
+}
+
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}

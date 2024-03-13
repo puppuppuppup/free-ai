@@ -1,0 +1,8 @@
+#! /bin/bash
+
+echo "Launching project..."
+sudo npm install -g yarn
+cd $(dirname $0)/dev/app
+sudo yarn && yarn dev &
+cd ../server
+sudo yarn && yarn start
