@@ -1,6 +1,6 @@
 #! /bin/bash
 
-sudo echo "Launching project..."
+echo "Launching project..."
 cd $(dirname $0)/dev/server
 yarn start &
 cd ../app
