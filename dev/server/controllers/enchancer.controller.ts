@@ -9,8 +9,17 @@ export class EnchancerController {
         const pathToImages = path.resolve(__dirname, '../../../in');
         const pathToOut = path.resolve(pathToImages, '../out');
         const images = fs.readdirSync(pathToImages);
+        const supportedExtentions = ['.png', '.jpeg', '.gif', '.bmp'];
+        if (images.length === 0) return;
         const upscaler = new Upscaler();
         for (const imageName of images) {
+            if (
+                !supportedExtentions.includes(
+                    path.parse(imageName).ext.toLowerCase()
+                )
+            ) {
+                continue;
+            }
             const image = tf.node.decodeImage(
                 fs.readFileSync(pathToImages + '/' + imageName),
                 3
@@ -25,7 +34,6 @@ export class EnchancerController {
             // dispose the tensors!
             image.dispose();
             tensor.dispose();
-            upscaledTensor.dispose();
         }
     }
 }

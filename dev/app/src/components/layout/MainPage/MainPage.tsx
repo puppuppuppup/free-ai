@@ -1,22 +1,12 @@
-'use client';
-import axios from 'axios';
-import React, { useCallback } from 'react';
+import React from 'react';
+import Enchancer from './Modules/Enchancer/Enchancer';
 
-type Props = {};
+export const BACKEND_URL = 'http://127.0.0.1:3003/api/';
 
-const MainPage = (props: Props) => {
-    const enchanceImages = async () => {
-        const res = await axios.get(
-            process.env.NEXT_PUBLIC_BACKEND_URL + 'enchancer'
-        );
-        console.log(res.data);
-    };
-
+const MainPage = () => {
     return (
         <div className="container">
-            <button className="btn" onClick={enchanceImages}>
-                Launch Image Upgrader
-            </button>
+            <Enchancer />
         </div>
     );
 };

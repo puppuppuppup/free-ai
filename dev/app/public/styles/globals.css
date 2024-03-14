@@ -8,11 +8,19 @@ html {
   box-sizing: inherit;
 }
 
+:root {
+  --color-gray: #888888;
+}
+
 .btn {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   cursor: pointer;
   padding: 0.7rem 1.2rem;
   background-color: #fff;
-  border: 1px solid rgb(136, 136, 136);
+  border: 1px solid var(--color-gray);
   border-radius: 5px;
   font-size: 1rem;
   transition: background-color .2s ease-in-out;
