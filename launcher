@@ -1,7 +1,8 @@
 #! /bin/bash
 
-echo "Launching project..."
-cd $(dirname $0)/dev/app
-yarn dev &
-cd ../server
-yarn start
+sudo echo "Launching project..."
+cd $(dirname $0)/dev/server
+yarn start &
+cd ../app
+yarn dev
+
