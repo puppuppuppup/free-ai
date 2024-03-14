@@ -9,7 +9,7 @@ export class EnchancerController {
         const pathToImages = path.resolve(__dirname, '../../../in');
         const pathToOut = path.resolve(pathToImages, '../out');
         const images = fs.readdirSync(pathToImages);
-        const supportedExtentions = ['.png', '.jpeg', '.gif', '.bmp'];
+        const supportedExtentions = ['.png', '.jpeg', '.jpg', '.gif', '.bmp'];
         if (images.length === 0) return;
         const upscaler = new Upscaler();
         for (const imageName of images) {
